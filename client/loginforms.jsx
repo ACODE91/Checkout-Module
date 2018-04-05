@@ -17,7 +17,7 @@ const LoginForm = (props) => {
 <input type="text" name="password" />
 </label>
 </form>
-<input type="submit" value="submit" onClick={props.loginFunc}/>
+<input type="submit" value="Next" onClick={props.loginFunc}/>
     </div>
   )
 }

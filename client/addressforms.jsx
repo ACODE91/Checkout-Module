@@ -25,7 +25,7 @@ const AddressForm = (props) => {
 <input type="text" name="Zip Code" />
 </label>
 </form>
-<input type="submit" value="submit" onClick={props.addressFunc}/>
+<input type="submit" value="Next" onClick={props.addressFunc}/>
 </div>
   )
 }

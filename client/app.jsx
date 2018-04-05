@@ -3,7 +3,7 @@ import css from './styles/styles.css';
 import LoginForms from './loginforms.jsx';
 import AddressForms from './addressforms.jsx';
 import PaymentForms from './paymentforms.jsx';
-// import Summary from './summary.jsx';
+import Summary from './summary.jsx';
 
 export default class App extends Component {
     constructor(props) {
@@ -25,7 +25,11 @@ export default class App extends Component {
   }
 
   handleAddress() {
-    this.setState({loginInfoFilled: false, AddressInfoFilled:true});
+    this.setState({loginInfoFilled: false, AddressInfoFilled:false, PaymentInfoFilled: true});
+  }
+
+  handlePayment() {
+    //this.setState({PaymentInfoFilled: false})
   }
 
   render() {
@@ -34,7 +38,7 @@ export default class App extends Component {
           {(!this.state.clickCheckOut) ? <div className="checkout" onClick={this.handleInitialClick.bind(this)}>checkout now</div> : <div></div>}
           {(this.state.loginInfoFilled) ? <LoginForms loginFunc={this.handleLogin.bind(this)}/> : <div></div>}
           {(this.state.AddressInfoFilled) ? <AddressForms addressFunc={this.handleAddress.bind(this)}/> : <div></div>}
-          {(this.state.PaymentInfoFilled) ? <PaymentForms /> : <div></div>}
+          {(this.state.PaymentInfoFilled) ? <PaymentForms paymentFunc={this.handlePayment.bind(this)}/> : <div></div>}
       </div>
     )
   }

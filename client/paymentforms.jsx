@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PaymentForm = () => {
+const PaymentForm = (props) => {
   return (
     <div>
 <form>
@@ -21,6 +21,7 @@ const PaymentForm = () => {
 <input type="text" name="password" />
 </label>
 </form>
+<input type="submit" value="Next" onClick={props.paymentFunc}/>
     </div>
   )
 }
